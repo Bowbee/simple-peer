@@ -14,6 +14,7 @@
     "url": "https://github.com/feross/simple-peer/issues"
   },
   "dependencies": {
+    "@types/node": "^18.0.0",
     "buffer": "^6.0.3",
     "debug": "^4.3.2",
     "err-code": "^3.0.1",
@@ -23,7 +24,6 @@
     "readable-stream": "^3.6.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
     "airtap": "^4.0.3",
     "airtap-manual": "^1.0.0",
     "airtap-sauce": "^1.1.0",
