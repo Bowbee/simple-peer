@@ -1,7 +1,7 @@
 {
   "name": "simple-peer",
   "description": "Simple one-to-one WebRTC video/voice and data channels",
-  "version": "9.12.3",
+  "version": "9.12.4",
   "publishConfig": {
     "registry": "http://npm.21e8.team"
   },
