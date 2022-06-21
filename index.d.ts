@@ -112,7 +112,7 @@ declare namespace SimplePeer {
     interface DataChannel extends stream.Duplex {
         bufferSize(): number;
 
-        send(chunk: any): void;
+        send(chunk: SimplePeerData): void;
 
         destroy(err: Error | undefined): this;
 
