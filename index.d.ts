@@ -114,8 +114,6 @@ declare namespace SimplePeer {
 
         send(chunk: SimplePeerData): void;
 
-        destroy(err: Error | undefined): this;
-
         close(err: Error | undefined): void;
 
     }
