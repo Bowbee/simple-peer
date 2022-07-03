@@ -116,6 +116,8 @@ declare namespace SimplePeer {
 
         close(err: Error | undefined): void;
 
+        channelName: string | null;
+
     }
 
     interface Instance extends DataChannel {
