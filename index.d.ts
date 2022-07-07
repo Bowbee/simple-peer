@@ -19,6 +19,8 @@ declare namespace SimplePeer {
         channelConfig?: RTCDataChannelInit | undefined;
         /** custom webrtc data channel name */
         channelName?: string | undefined;
+        /**  */
+        uniqueName?: boolean | undefined;
         /** custom webrtc configuration (used by [`RTCPeerConnection`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) constructor) */
         config?: RTCConfiguration | undefined;
         /** custom offer options (used by [`createOffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer) method) */

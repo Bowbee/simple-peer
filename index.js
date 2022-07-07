@@ -24,7 +24,8 @@ function warn (message) {
  */
 class Peer extends DataChannel {
   constructor (opts = {}) {
-    opts.channelName = opts.channelName || 'default'
+    opts.channelName = opts.channelName || 'default';
+    opts.uniqueName = opts.uniqueName || false;
     super(opts)
 
     this._id = randombytes(4).toString('hex').slice(0, 7)
@@ -129,7 +130,7 @@ class Peer extends DataChannel {
 
     this._pc.ondatachannel = event => {
       this._debug('ondatachannel', event.channel.label)
-      if (event.channel.lablel === 'default') {
+      if (event.channel.label === 'default') {
         this._setDataChannel(event.channel)
       } else {
         var channel = new DataChannel(opts)
@@ -239,12 +240,11 @@ class Peer extends DataChannel {
   * @param {String} channelName
   * @param {Object} channelConfig
   * @param {Object} opts
-  * @param {boolean} uniqueName
   */
-  createDataChannel (channelName, channelConfig, opts, uniqueName) {
+  createDataChannel (channelName, channelConfig, opts) {
     if (this.destroyed) throw errCode(new Error('cannot create DataChannel after peer is destroyed'), 'ERR_DESTROYED')
     var channel = new DataChannel(opts)
-    channelName = uniqueName ? this._makeUniqueChannelName(channelName) : channelName;
+    channelName = opts.uniqueName ? this._makeUniqueChannelName(channelName) : channelName;
     channel._setDataChannel(this._pc.createDataChannel(channelName, channelConfig))
     this._channels.push(channel)
     return channel
